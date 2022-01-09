@@ -5,7 +5,8 @@
   "builds": [
     {
       "src": "./index.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["components/**"] }
     },
     {
       "src": "view/**",
@@ -16,11 +17,11 @@
   "routes": [
     {
       "src": "/auth/(.*)",
-      "dest": "./index.js"
+      "dest": "components/auth.js"
     },
     {
       "src": "/chat/(.*)",
-      "dest": "./index.js"
+      "dest": "components/chatting.js"
     },
     {
       "src": "/",
