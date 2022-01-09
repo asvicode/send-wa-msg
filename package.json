@@ -2,9 +2,9 @@
   "name": "whatsapp-node-api",
   "version": "0.0.3",
   "description": "A NodeJS API wrapper for whatsapp-web.js",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node api.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
