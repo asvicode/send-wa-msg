@@ -8,9 +8,9 @@
       "use": "@vercel/node"
     },
     {
-      "src": "components/**",
+      "src": "view/**",
       "use": "@vercel/static",
-      "config": { "includeFiles": ["components/**"] }
+      "config": { "includeFiles": ["view/**"] }
     }
   ],
   "routes": [
@@ -24,7 +24,11 @@
     },
     {
       "src": "/",
-      "dest": "./index.html"
+      "dest": "view/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "view/$1"
     }
   ]
 }
