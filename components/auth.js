@@ -2,6 +2,8 @@ const router = require('express').Router();
 const fs = require('fs');
 
 router.get('/checkauth', async (req, res) => {
+    res.setHeader('Content-Type', 'text/html')
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     client.getState().then((data) => {
         console.log(data)
         res.send(data)
@@ -18,6 +20,8 @@ router.get('/checkauth', async (req, res) => {
 });
 
 router.get('/getqr', (req,res) => {
+    res.setHeader('Content-Type', 'text/html')
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     var qrjs = fs.readFileSync('components/qrcode.js');
 
     fs.readFile('components/last.qr', (err,last_qr) => {

@@ -13,6 +13,8 @@ const mediadownloader = (url, path, callback) => {
   }
 
 router.post('/sendmessage/:phone', async (req,res) => {
+    res.setHeader('Content-Type', 'text/html')
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     let phone = req.params.phone;
     let message = req.body.message;
 
