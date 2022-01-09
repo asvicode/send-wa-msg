@@ -9,7 +9,7 @@ router.get('/checkauth', async (req, res) => {
         if (err) {
             res.send("DISCONNECTED")
             try {
-                fs.unlinkSync('session.json')
+                fs.unlinkSync('../session.json')
             } catch(err) {
                 console.log(err)
             }
