@@ -6,12 +6,33 @@
     {
       "src": "./index.js",
       "use": "@vercel/node",
+    },
+    {
+      "src": "view/**",
+      "use": "@vercel/static",
+      "config": { "includeFiles": ["view/**"] }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "./index.js"
+    },
+    {
+      "src": "/auth/getqr",
+      "dest": "./index.js"
+    },
+    {
+      "src": "/chat/(.*)",
+      "dest": "./index.js"
+    },
+    {
+      "src": "/",
+      "dest": "view/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "view/$1"
     }
   ]
 }
