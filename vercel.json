@@ -17,11 +17,11 @@
   "routes": [
     {
       "src": "/auth/(.*)",
-      "dest": "components/auth.js"
+      "dest": "./index.js"
     },
     {
       "src": "/chat/(.*)",
-      "dest": "components/chatting.js"
+      "dest": "./index.js"
     },
     {
       "src": "/",
