@@ -6,7 +6,7 @@
     {
       "src": "./index.js",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["components/**"] }
+      "config": { "includeFiles": ["/**"] }
     },
     {
       "src": "view/**",
@@ -15,6 +15,14 @@
     }
   ],
   "routes": [
+    {
+      "src": "/auth/(.*)",
+      "dest": "./index.js"
+    },
+    {
+      "src": "/chat/(.*)",
+      "dest": "./index.js"
+    },
     {
       "src": "/",
       "dest": "view/index.html"
