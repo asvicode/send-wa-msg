@@ -1,27 +1,15 @@
 {
   "version": 2,
-  "env": {
-  },
   "builds": [
-    {
-      "src": "./index.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["components/**"] }
-    },
-    {
-      "src": "view/**",
-      "use": "@vercel/static",
-      "config": { "includeFiles": ["view/**"] }
-    }
+      {
+          "src": "./index.js",
+          "use": "@vercel/node"
+      }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "view/index.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "view/$1"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "/"
+      }
   ]
 }
