@@ -21,7 +21,9 @@ router.post('/sendmessage/:phone', async (req,res) => {
     } else {
         client.sendMessage(phone + '@c.us', message).then((response) => {
             if (response.id.fromMe) {
-                res.send({ status:'success', message: `Message successfully sent to ${phone}` })
+                res.send({ status:'success', message: `WhatsApp Message successfully sent to ${phone}` })
+            }else {
+                res.send({ status:'failed', message: 'Send whatsapp message failed.' })
             }
         });
     }
