@@ -1,1 +1,30 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{
+  "version": 2,
+  "env": {
+  },
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "components/**",
+      "use": "@vercel/static",
+      "config": { "includeFiles": ["components/**"] }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/auth/(.*)",
+      "dest": "components/auth.js"
+    },
+    {
+      "src": "/chat/(.*)",
+      "dest": "components/chatting.js"
+    },
+    {
+      "src": "/",
+      "dest": "./index.html"
+    }
+  ]
+}
