@@ -15,11 +15,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "./index.js"
-    },
-    {
-      "src": "/auth/getqr",
+      "src": "/auth/(.*)",
       "dest": "./index.js"
     },
     {
